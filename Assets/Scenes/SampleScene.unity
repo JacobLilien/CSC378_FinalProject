@@ -11525,7 +11525,15 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 619541846}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 619541846}
     - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
@@ -11533,7 +11541,15 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
@@ -11541,11 +11557,27 @@ PrefabInstance:
       value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Jump
       objectReference: {fileID: 0}
     - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: isDucking
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426468994977465481, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
