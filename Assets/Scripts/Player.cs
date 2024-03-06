@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
     private AudioSource soundeffect;
     public UnityEvent myEvents;
-    private bool hitGrass;
-    private bool hitCloud;
+    private bool collided;
+    private bool isDucking;
 
     Rigidbody2D rb;
     public Animator animator;
@@ -31,22 +31,37 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        //animation = GetComponent<Animation>();
         soundeffect = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isDucking", isDucking);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
-        //animator.SetBool("Collides", false);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Play the animation named "YourAnimationClipName"
-            print(animator.name);
-            //Play("YourAnimationClipName");
-        }
         horizontalMovement = Input.GetAxisRaw("Horizontal") * speed;
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (collided)
+            {
+                soundeffect.Play();
+                animator.SetTrigger("Jump");
+                rb.velocity = new Vector2(rb.velocity.x, 10);
+                collided = false;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            Debug.Log("pressing down");
+            isDucking = true;
+        }
+        else
+        {
+            isDucking = false;
+        }
+
 
         if (horizontalMovement > 0 && !facingRight)
         {
@@ -63,16 +78,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(7 * horizontalMovement * Time.fixedDeltaTime, rb.velocity.y);
-        if (hitGrass)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + 8);
-        }
-        hitGrass = false;
-        if (hitCloud)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 10);
-        }
-        hitCloud = false;
     }
 
     private void Flip()
@@ -87,39 +92,33 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         GameObject collidedObject = col.gameObject;
-        animator.SetTrigger("Jump");
 
         // Now you can do something with the collided object
-        Debug.Log("Collided with: " + collidedObject.name);
+        // Debug.Log("Collided with: " + collidedObject.name);
         
         if (collidedObject.name.Contains("Grass"))
         {
-            hitGrass = true;
+            collided = true;
+            // soundeffect.Play();
+            // animator.SetTrigger("Jump");
         }
         else if (collidedObject.name.Contains("CLOUD"))
         {
-            hitCloud = true;
-            soundeffect.Play();
+            collided = true;
+            // soundeffect.Play();
+            // animator.SetTrigger("Jump");
         }
         else if (collidedObject.name.Contains("Rain"))
         {
-            hitCloud = true;
-            soundeffect.Play();
+            collided = true;
+            // soundeffect.Play();
             Destroy(collidedObject);
+            // animator.SetTrigger("Jump");
         }
         else if (collidedObject.name.Contains("Golden"))
         {
             SceneManager.LoadScene(3);
-        }
-        else if (collidedObject.name.Contains("Background"))
-        {
-
-        }
-        else
-        {
-            //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + 10);
-            
-        }       
+        }  
 
     }
 
