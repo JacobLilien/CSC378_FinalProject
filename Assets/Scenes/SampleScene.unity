@@ -2992,7 +2992,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 619541832}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2a388ae8107f7443295f610d42543855, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3038,7 +3038,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.6245208
+  MinDistance: 0.77993774
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -3119,6 +3119,41 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7756897427402899081, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
   m_PrefabInstance: {fileID: 172439657050488910}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &619541851
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619541832}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 2a388ae8107f7443295f610d42543855, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.007383776, y: -0.12489665}
+  m_Size: {x: 0.31474888, y: 0.0702065}
+  m_Direction: 1
 --- !u!1 &666467443
 GameObject:
   m_ObjectHideFlags: 0
@@ -11497,12 +11532,20 @@ PrefabInstance:
       value: -0.111
       objectReference: {fileID: 0}
     - target: {fileID: 4795763891480125207, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795763891480125207, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 2a388ae8107f7443295f610d42543855, type: 2}
     - target: {fileID: 4795763891480125207, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       propertyPath: m_AngularDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795763891480125207, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4795763891480125207, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       propertyPath: m_GravityScale
@@ -11587,6 +11630,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4044922481535109351, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 619541839}
+    - targetCorrespondingSourceObject: {fileID: 4044922481535109351, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 619541851}
     - targetCorrespondingSourceObject: {fileID: 4044922481535109351, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 619541840}

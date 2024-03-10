@@ -9,19 +9,24 @@ public class Player : MonoBehaviour
 {
     public float health, maxHealth = 10f;
     //[Serialized Field] FloatingHealthBar healthBar;
+
     public float speed = 40f;
-    private float horizontalMovement = 0f;
-    private bool facingRight = true;
+    private float horizontalMovement = 10f;
+
     private AudioSource soundeffect;
     public UnityEvent myEvents;
-    private bool collided;
+
+    private bool isJumping = false;
+    private bool facingRight = true;
     private bool isDucking;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public Animator animator;
-    //public new Animation animation;
+
+    public CircleCollider2D normalHitbox;
+    public CapsuleCollider2D duckingHitbox;
+
     
-    // Start is called before the first frame update
     private void Awake()
     {
         //healthBar = GetComponentInChildren<FloatingHealthBar>();
@@ -32,6 +37,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         soundeffect = GetComponent<AudioSource>();
+        normalHitbox = GetComponent<CircleCollider2D>();
+        duckingHitbox = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -39,30 +46,37 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("isDucking", isDucking);
         animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
-        horizontalMovement = Input.GetAxisRaw("Horizontal") * speed;
+        float yvelocity = rb.velocity.y;
+        Debug.Log(yvelocity);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isJumping == false && Mathf.Abs(yvelocity) < 1)
         {
-            if (collided)
-            {
-                soundeffect.Play();
-                animator.SetTrigger("Jump");
-                rb.velocity = new Vector2(rb.velocity.x, 10);
-                collided = false;
-            }
+            Jump();
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Debug.Log("pressing down");
-            isDucking = true;
+            setDuck();
         }
+
         else
         {
-            isDucking = false;
+            setNormal();
         }
 
+    }
 
+    void FixedUpdate()
+    {
+        setLeftRightMovement();
+    }
+
+    void setLeftRightMovement()
+    {
+        rb.velocity = new Vector2(7 * horizontalMovement * Time.fixedDeltaTime, rb.velocity.y);
+        horizontalMovement = Input.GetAxisRaw("Horizontal") * speed;
+        
         if (horizontalMovement > 0 && !facingRight)
         {
             Flip();
@@ -72,12 +86,6 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
-
-    }
-
-    void FixedUpdate()
-    {
-        rb.velocity = new Vector2(7 * horizontalMovement * Time.fixedDeltaTime, rb.velocity.y);
     }
 
     private void Flip()
@@ -88,50 +96,51 @@ public class Player : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
+
+    void Jump()
+    {
+        soundeffect.Play();
+        animator.SetTrigger("Jump");
+        rb.velocity = new Vector2(rb.velocity.x, 10);
+        isJumping = true;
+    }
+
+    void setDuck()
+    {
+        isDucking = true;
+        duckingHitbox.enabled = true;
+        normalHitbox.enabled = false;
+    }
+
+    void setNormal()
+    {
+        isDucking = false;
+        normalHitbox.enabled = true;
+        duckingHitbox.enabled = false;
+    }
     
     void OnCollisionEnter2D(Collision2D col)
     {
         GameObject collidedObject = col.gameObject;
-
-        // Now you can do something with the collided object
-        // Debug.Log("Collided with: " + collidedObject.name);
         
         if (collidedObject.name.Contains("Grass"))
         {
-            collided = true;
-            // soundeffect.Play();
-            // animator.SetTrigger("Jump");
+            isJumping = false;
         }
         else if (collidedObject.name.Contains("CLOUD"))
         {
-            collided = true;
-            // soundeffect.Play();
-            // animator.SetTrigger("Jump");
+            isJumping = false;
         }
         else if (collidedObject.name.Contains("Rain"))
         {
-            collided = true;
-            // soundeffect.Play();
+            isJumping = false;
             Destroy(collidedObject);
-            // animator.SetTrigger("Jump");
         }
         else if (collidedObject.name.Contains("Golden"))
         {
             SceneManager.LoadScene(3);
         }  
 
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        if (myEvents == null)
-        {
-
-        }
-        else
-        {
-            myEvents.Invoke();
-        }
     }
     
 }
