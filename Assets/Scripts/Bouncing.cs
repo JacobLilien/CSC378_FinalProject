@@ -6,7 +6,7 @@ public class Bouncing : MonoBehaviour
 {
 
     //test comment
-    
+    //change
     public float jumpForce = 10;  // Adjust the jump force as needed
     // Start is called before the first frame update
     void Start()
