@@ -3154,6 +3154,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.007383776, y: -0.12489665}
   m_Size: {x: 0.31474888, y: 0.0702065}
   m_Direction: 1
+--- !u!114 &619541857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619541832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b623077c1f341f08ebc142aa606aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &666467443
 GameObject:
   m_ObjectHideFlags: 0
@@ -8832,7 +8844,7 @@ GameObject:
   - component: {fileID: 1653915109}
   m_Layer: 0
   m_Name: bird fly spritesheet_0
-  m_TagString: Untagged
+  m_TagString: evil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11816,6 +11828,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4044922481535109351, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 619541840}
+    - targetCorrespondingSourceObject: {fileID: 4044922481535109351, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 619541857}
   m_SourcePrefab: {fileID: 100100000, guid: 247929d8c279243519c8fccd94a6e1d3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
