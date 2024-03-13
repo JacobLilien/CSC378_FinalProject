@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using UnityEngine;
 
@@ -36,7 +37,16 @@ public class ScaryBird : MonoBehaviour
             Debug.Log("Next point position: " + points[i].position);
         }
 
+        Vector2 direction = ((Vector2)points[i].position - (Vector2)transform.position).normalized;
+
+        // Calculate angle in degrees
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Rotate the bird to face the direction
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
         transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
     }
+    
 }
 
