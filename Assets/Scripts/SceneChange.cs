@@ -5,10 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public void PlayGame()
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    
+    public void LevelSelector()
     {
         SceneManager.LoadScene(1);
-        print("Hello");
+    }
+
+    public void Info()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void IntroScene()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void Level1()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene(5);
+    }
+    
+    public void Credits()
+    {
+        SceneManager.LoadScene(6);
     }
 
     public void QuitGame()
@@ -16,20 +45,9 @@ public class SceneChange : MonoBehaviour
         Application.Quit();
     }
 
-    public void Credits()
-    {
-        SceneManager.LoadScene(2);
-    }
 
-    public void MainMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
 
-    public void Info()
-    {
-        SceneManager.LoadScene(4);
-    }
+
 
 
 

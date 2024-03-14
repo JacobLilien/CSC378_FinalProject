@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.name.Contains("Golden"))
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(7);
         }  
 
     }
