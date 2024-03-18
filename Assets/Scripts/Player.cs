@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
     {
         GameObject collidedObject = col.gameObject;
         
-        if (collidedObject.name.Contains("Grass"))
+        if (collidedObject.name.Contains("Ground") || collidedObject.name.Contains("Grass"))
         {
             isJumping = false;
         }
