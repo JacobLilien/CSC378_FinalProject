@@ -696,21 +696,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game by: Jacob Lilien and Joseph Konat
+  m_text: 'Game by: Jacob Lilien, Joseph Konat & Miriam Gabai
 
-    Artwork: Joseph Konat
+    Artwork: Joseph
+    Konat & Miriam Gabai
 
-    Animations:
-    Jacob Lilien
+    Animations: Jacob Lilien & Miriam Gabai
 
-    Game functions: Jacob Lilien and Joseph Konat
+    Game functions:
+    Jacob Lilien & Joseph Konat
 
-    Backgrounds:
-    Anokolisa
+    Backgrounds: Anokolisa
 
     Music: FabienC@RustedMusicStudio
 
-    SFX: Mayra'
+    SFX:
+    Mayra, FesliyanStudios.com'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
