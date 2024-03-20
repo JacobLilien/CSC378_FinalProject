@@ -13,23 +13,40 @@ public class playerDeath : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-private void OnCollisionEnter2D (Collision2D collision) {
+    private void OnCollisionEnter2D (Collision2D collision) 
+    {
+        if(collision.gameObject.CompareTag("evil"))
+        {
+            Die();
+            RestartLevel();
+        }
 
-if(collision.gameObject.CompareTag("evil")){
-    Die();
-    RestartLevel();
-}
+        if (collision.gameObject.CompareTag("Golden1"))
+        {
+            SceneManager.LoadScene(9); //BeatLevel1 Scene
+        }
 
-}
+        if (collision.gameObject.CompareTag("Golden2"))
+        {
+            SceneManager.LoadScene(10); //BeatLevel2 Scene
+        }
 
-private void Die(){
-rb.bodyType = RigidbodyType2D.Static;
-animator.SetTrigger("death");
+        if (collision.gameObject.CompareTag("Golden3"))
+        {
+            SceneManager.LoadScene(7); // Win Scene
+        }
 
-}
+    }
 
-private void RestartLevel(){
-SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-}
+    private void Die()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        animator.SetTrigger("death");
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
 }
