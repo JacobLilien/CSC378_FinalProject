@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50aaa3b9e285a490685d92fd01982c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibilityDuration: 2.5
+  visibilityDuration: 3.2
   hitbox: {fileID: 0}
   lightningstrike: {fileID: 0}
 --- !u!212 &346582244
@@ -4407,7 +4407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50aaa3b9e285a490685d92fd01982c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibilityDuration: 3.5
+  visibilityDuration: 3.1
   hitbox: {fileID: 0}
   lightningstrike: {fileID: 0}
 --- !u!212 &851615506

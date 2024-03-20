@@ -29,7 +29,7 @@ public class Lightning : MonoBehaviour
 
             spriteRenderer.enabled = false; // Hide the sprite
             hitbox.enabled = false;
-            yield return new WaitForSeconds(visibilityDuration * 3);
+            yield return new WaitForSeconds(visibilityDuration * 2);
         }
     }
 
