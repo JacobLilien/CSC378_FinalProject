@@ -25,8 +25,11 @@ EditorBuildSettings:
     guid: 0a6c8eb7d98594d178ce6b3d4d84faff
   - enabled: 1
     path: Assets/Scenes/CreditScene.unity
-    guid: 4af75a0fd9ee5457eb453b482af89965
+    guid: 099153957a3594da1b1972a5fd99ad68
   - enabled: 1
     path: Assets/Scenes/Win Scene.unity
     guid: 0674b08df05cb4120bac13ad24356c0f
+  - enabled: 1
+    path: Assets/Scenes/YouBeatLevel1.unity
+    guid: 4af75a0fd9ee5457eb453b482af89965
   m_configObjects: {}
