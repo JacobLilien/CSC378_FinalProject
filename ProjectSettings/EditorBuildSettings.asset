@@ -30,6 +30,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Win Scene.unity
     guid: 0674b08df05cb4120bac13ad24356c0f
   - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 6391f3d9014bc4a1eaae16214d4a3d58
+  - enabled: 1
     path: Assets/Scenes/YouBeatLevel1.unity
     guid: 4af75a0fd9ee5457eb453b482af89965
+  - enabled: 1
+    path: Assets/Scenes/YouBeatLevel2.unity
+    guid: 18e537d2e04c4448e958b68b96ac6297
+  - enabled: 1
+    path: Assets/Scenes/YouBeatLevel3.unity
+    guid: b0087643ad30e4499be4ec7cd993ecd6
   m_configObjects: {}

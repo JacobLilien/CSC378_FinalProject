@@ -40,6 +40,28 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
+    public void Level3()
+    {
+        SceneManager.LoadScene(8);
+    }
+
+    public void BeatLevel1()
+    {
+        SceneManager.LoadScene(9);
+    }
+
+    public void BeatLevel2()
+    {
+        SceneManager.LoadScene(10);
+    }
+
+    public void BeatLevel3()
+    {
+        SceneManager.LoadScene(11);
+    }
+
+
+
     public void QuitGame()
     {
         Application.Quit();
