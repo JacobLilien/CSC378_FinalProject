@@ -133,7 +133,9 @@ public class Player : MonoBehaviour
         }
         else if (collidedObject.name.Contains("Rain"))
         {
-            isJumping = false;
+            soundeffect.Play();
+            animator.SetTrigger("Jump");
+            rb.velocity = new Vector2(rb.velocity.x, 10);
             Destroy(collidedObject);
         }
         else if (collidedObject.name.Contains("Golden"))
