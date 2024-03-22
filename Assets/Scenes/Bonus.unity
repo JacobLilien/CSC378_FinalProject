@@ -1439,7 +1439,7 @@ MonoBehaviour:
   points:
   - {fileID: 644044297}
   - {fileID: 619541838}
-  speed: 2
+  speed: 2.2
 --- !u!95 &422937269
 Animator:
   serializedVersion: 5
@@ -2178,7 +2178,7 @@ MonoBehaviour:
   points:
   - {fileID: 1596723839}
   - {fileID: 619541838}
-  speed: 2
+  speed: 2.2
 --- !u!95 &594506131
 Animator:
   serializedVersion: 5
