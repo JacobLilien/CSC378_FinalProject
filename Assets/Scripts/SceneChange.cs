@@ -60,6 +60,11 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene(11);
     }
 
+    public void Bonus()
+    {
+        SceneManager.LoadScene(12);
+    }
+
 
 
     public void QuitGame()

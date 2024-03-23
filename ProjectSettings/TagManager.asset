@@ -48,3 +48,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: 2
+    uniqueID: 4272939787
+    locked: 0
+  - name: 3
+    uniqueID: 348644229
+    locked: 0
+  - name: Ball
+    uniqueID: 278723645
+    locked: 0
